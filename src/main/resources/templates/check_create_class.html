@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<link rel="stylesheet" href="../static/bootstrap/css/bootstrap.css" th:href="@{bootstrap/css/bootstrap.min.css}">
+<!--<link rel="stylesheet" href="../static/bootstrap/mycss/create_class.css" th:href="@{bootstrap/mycss/create_class.css}">-->
+<!--<script  src="../static/bootstrap/myjs/jquery.mini.js" th:src="@{bootstrap/myjs/jquery.mini.js}"></script>-->
+<!--<script  src="../static/bootstrap/myjs/index.js" th:src="@{bootstrap/myjs/index.js}"></script>-->
+<style>
+    h1{
+        margin-top: 20px;
+        text-align: center;
+    }
+    div{
+        border: 1px solid;
+        display: inline-block;
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 20px;
+    }
+    td{
+        height: 40px;
+        text-align: center;
+    }
+</style>
+<body>
+    <h1>您创建的班级</h1>
+    <div class="border border-primary" th:each="user:${users}">
+        <table>
+            <tr><td>班级名称:</td><td th:text="${user.getClass_name()}">springboot3班</td></tr>
+            <tr><td>班级编号:</td><td th:text="${user.getClass_id()}">XXXXXXX</td></tr>
+            <tr><td>班级人数:</td><td th:text="${user.getClass_sum()}">30人</td></tr>
+            <tr>
+<!--                <td><button>发布作业</button></td>-->
+                <td><a class="btn btn-primary" href="" th:href="@{/publishhomework(class_id=${user.getClass_id()},user_id=${user.getUser_id()})}">发布作业</a></td>
+                <td><a class="btn btn-success"href="" th:href="@{/checkpublishhomework(class_id=${user.getClass_id()})}">查看发布作业</a></td>
+                <td><a class="btn btn-info" href="" th:href="@{/detail_class(class_id=${user.getClass_id()})}">查看详情</a></td>
+            </tr>
+        </table>
+    </div>
+</body>
+<!--<script th:inline="javascript">-->
+<!--    document.getElementsByClassName("detail").onclick=function () {-->
+<!--        window.location="/login";-->
+<!--    }-->
+<!--</script>-->
+</html>

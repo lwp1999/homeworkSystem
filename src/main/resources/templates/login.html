@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>登陆</title>
+</head>
+<link rel="stylesheet" href="../static/bootstrap/css/bootstrap.css" th:href="@{bootstrap/css/bootstrap.min.css}">
+<style>
+    *{
+        margin:0px 0px;
+        padding:0px 0px;
+    }
+
+    form{
+        margin: auto auto;
+        margin-top: 20px;
+    }
+
+    table{
+        margin: auto auto;
+    }
+
+    td{
+        width: 200px;
+        height: 50px;
+    }
+
+    h1{
+        margin-top: 20px;
+        text-align: center;
+    }
+    .a{
+        width: 200px;
+    }
+</style>
+<h1>作业检查系统</h1>
+<body>
+    <form action="/gologin">
+        <table>
+            <tr><td>账号</td></tr>
+            <tr><td><input class="border border-primary form-control" type="text" name="account"></td></tr>
+            <tr><td>密码</td></tr>
+            <tr><td><input class="border border-primary form-control" type="password" name="password"></td></tr>
+            <tr><td><input class="a btn btn-primary" type="submit" value="登陆"></td></tr>
+            <tr><td><input class="a btn btn-primary" type="button" value="注册"></td></tr>
+        </table>
+    </form>
+</body>
+</html>

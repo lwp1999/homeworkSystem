@@ -1,0 +1,193 @@
+*{
+    margin:0px 0px;
+    padding:0px 0px;
+}
+
+iframe{
+    border: 0px solid white;
+}
+
+.title{
+    border: 1px solid black;
+    height: 95px;
+    width: 98%;
+    /*background-color: #1e90ff;*/
+    background-color: #21A6BB;
+    margin: auto auto;
+    color: white;
+    border-radius: 10px;
+}
+
+h1{
+    text-align: center;
+    font-size: 50px;
+    line-height: 80px;
+    border: #21A6BB;
+}
+
+nav{
+    display: inline-block;
+    width: 15%;
+    height: 500px;
+    border: 1px solid #21A6BB;
+    margin-left: 1%;
+    float: left;
+    border-radius: 10px;
+    /*background-color: #1385FF;*/
+    background-color: #21A6BB;
+    /*background-color: #80bdff;*/
+    /*background-color: #bee5eb;*/
+    color: white;
+}
+
+header{
+    border-radius: 10px;
+    display: inline-block;
+    border: 1px solid #21A6BB;
+    height: 500px;
+    width: 82.7%;
+    margin-right: 1%;
+    float: right;
+}
+
+aside div div{
+    border-radius: 10px;
+    border: 1px solid #21A6BB;
+    height: 60px;
+    font-size: 25px;
+    text-align: center;
+    line-height: 60px;
+}
+
+.nav_title:hover{
+    cursor: pointer;
+}
+
+.nav_content:hover{
+    cursor: pointer;
+}
+
+
+
+.table_chaxinxi{
+    height: 400px;
+    width: 80%;
+    margin: 80px auto;
+    margin-bottom: 0px;
+    text-align: center;
+}
+img {
+    width: 25px;
+    height: 25px;
+}
+
+
+.one{
+
+}
+
+.two{
+    display: inline-block;
+    float: right;
+    margin-right: 20px;
+    height: 30px;
+    margin-top: 5px;
+}
+.tb_list{
+    width: 82.7%;
+    font-size: 20px;
+    border-radius: 2px;
+    /*margin-left: 150px;*/
+    /*margin-top: 50px;*/
+    margin: auto;
+    margin-bottom: 0px;
+    text-align: center;
+}
+th,td{
+    border: black solid 1px;
+
+}
+.tr_list{
+    height: 50px;
+    height: 35px;
+}
+.td1{
+    width: 30%;
+}
+.a{
+    border: 2px solid ;
+    font-size:18px;
+    width:30%;
+    text-align:center;
+    padding-right:10px;
+    text-decoration:none;
+    border-radius: 2px;
+}
+.menu_content{
+    height: 600px;
+    border: 2px solid white;
+}
+
+.table_gaixinxi{
+    height: 445px;
+    width: 80%;
+    margin: 80px auto;
+    margin-bottom: 0px;
+    text-align: center;
+}
+.b{
+    border: 2px solid ;
+    font-size:18px;
+    width: 70%;
+    text-align:left;
+    padding-right:10px;
+    text-decoration:none;
+    border-radius: 2px;
+}
+.gai{
+    height: 300px;
+    border: 2px solid white;
+}
+
+.c{
+    width: 100%;
+    height: 100%;
+    font-size:18px;
+}
+.td_bottom{
+    border: 2px solid white;
+}
+
+.table_gaimima{
+    height: 150px;
+    width: 80%;
+    margin: 80px auto;
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+.sub1{
+    width: 80px;
+    height: 35px;
+}
+
+table{
+    margin: 10px auto;
+}
+
+td{
+    text-align: center;
+    vertical-align: center;
+}
+.query_evaluation{
+    margin: auto auto;
+    width: 400px;
+    text-align: center;
+}
+.title a{
+    position: absolute;
+    color: white;
+    font-family: 微软雅黑;
+    margin-top: -20px;
+    right: 2%;
+}

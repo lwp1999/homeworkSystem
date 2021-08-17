@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<link rel="stylesheet" href="../static/bootstrap/css/bootstrap.css" th:href="@{bootstrap/css/bootstrap.min.css}">
+<style>
+    *{
+        margin:0px 0px;
+        padding:0px 0px;
+    }
+
+    form{
+        margin: auto auto;
+        margin-top: 20px;
+    }
+
+    table{
+        margin: auto auto;
+        /*border-spacing: 10px 10px;*/
+    }
+
+    td{
+        width: 200px;
+        height: 50px;
+    }
+
+    td:first-child{
+        text-align: right;
+        padding-right: 20px;
+    }
+
+    h1{
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .a{
+        width: 300px;
+    }
+</style>
+<body>
+<h1>注册</h1>
+<form action="/goregister" id="goregister" onsubmit="return goregister()">
+    <table>
+        <tr><td>账号:</td><td><input class="border border-primary form-control" type="text" name="user_id"></td></tr>
+        <tr><td>密码:</td><td><input id="p1" class="border border-primary form-control" type="password" name="password"></td></tr>
+        <tr><td>确认密码:</td><td><input id="p2" class="border border-primary form-control" type="password"></td></tr>
+        <tr><td>用户名:</td><td><input class="border border-primary form-control" type="text" name="name"></td></tr>
+        <tr><td>学校:</td><td><input class="border border-primary form-control" type="text" name="school"></td></tr>
+        <tr><td>QQ:</td><td><input class="border border-primary form-control" type="text" name="qq"></td></tr>
+        <tr><td>手机号:</td><td><input class="border border-primary form-control" type="text" name="phone"></td></tr>
+        <tr><td>邮箱:</td><td><input class="border border-primary form-control" type="text" name="email"></td></tr>
+        <tr><td colspan="2"><input class="a btn btn-primary" type="submit" value="注册"></td></tr>
+        <tr><td colspan="2"><input class="a btn btn-success" type="button" value="返回登陆"></td></tr>
+    </table>
+</form>
+</body>
+<script th:inline="javascript">
+    function goregister() {
+        p1=document.getElementById("p1").value;
+        p2=document.getElementById("p2").value;;
+        if(p1==p2){
+            return true;
+        }else{
+            alert("密码不一致");
+            return false;
+        }
+    }
+</script>
+</html>

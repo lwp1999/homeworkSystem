@@ -1,0 +1,21 @@
+*{
+    margin:0px 0px;
+    padding:0px 0px;
+}
+
+form{
+    margin: auto auto;
+}
+
+table{
+    margin: auto auto;
+}
+
+td{
+    width: 200px;
+    height: 40px;
+}
+
+h2{
+    text-align: center;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<link rel="stylesheet" href="../static/bootstrap/css/bootstrap.css" th:href="@{bootstrap/css/bootstrap.min.css}">
+<style>
+    h1{
+        margin-top: 20px;
+        text-align: center;
+    }
+    div{
+        border: 1px solid;
+        display: inline-block;
+        margin: auto auto;
+        margin-top: 20px;
+    }
+    table{
+        margin: auto auto;
+        margin-top: 20px;
+    }
+    td{
+        height: 40px;
+        width: 200px;
+        text-align: center;
+    }
+</style>
+<body>
+<h1 th:text="${classname} + 班级详情">xxxx班级</h1>
+
+<table class="border border-primary">
+    <tr><td>学生姓名</td><td>学校</td><td>电话号码</td><td></td></tr>
+    <tr th:each="user:${users}">
+        <td th:text="${user.getName()}"></td>
+        <td th:text="${user.getSchool()}"></td>
+        <td th:text="${user.getPhone()}"></td>
+<!--        <td><a th:href="@{/detail_class(class_id=${user.getClass_id()})}">踢出班级</a></td>-->
+<!--        <td><button th:class="t" class="t">踢出班级</button></td>-->
+        <td><a class="btn btn-primary" th:href="@{/kickuser(class_id=${class_id},user_id=${user.getUser_id()})}">踢出班级</a></td>
+    </tr>
+</table>
+<!--<script th:inline="javascript">-->
+<!--    document.getElementsByClassName("t").onclick = function () {-->
+<!--        window.location="/";-->
+<!--    }-->
+
+
+<!--</script>-->
+</body>
+
+</html>

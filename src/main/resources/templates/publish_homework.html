@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>发布作业</title>
+</head>
+<link rel="stylesheet" href="../static/bootstrap/css/bootstrap.css" th:href="@{bootstrap/css/bootstrap.min.css}">
+<style>
+    h1{
+        margin-top: 20px;
+        text-align: center;
+    }
+    div{
+        border: 1px solid;
+        display: inline-block;
+        margin-top: 20px;
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+    table{
+        margin: auto auto;
+    }
+    td{
+        height: 40px;
+        width: 200px;
+        text-align: center;
+    }
+</style>
+<body>
+    <form action="/gopublishhomework">
+        <table>
+            <input th:value="${user_id}" name="user_id" type="hidden">
+            <input th:value="${class_id}" name="class_id" type="hidden">
+            <input th:id="riqi" id="riqi" th:name="riqi" name="riqi" type="hidden">
+            <tr><td>作业标题</td></tr>
+            <tr><td><input class="border border-primary " type="text" style="width: 400px; height: 25px" name="ph_name"></td></tr>
+            <tr><td>作业内容</td></tr>
+            <tr><td><textarea class="border border-primary form-control" style="width:700px; height:300px" name="ph_content"></textarea></td></tr>
+<!--            <tr><td>上传作业文件</td></tr>-->
+<!--            <tr><td><input type="file" name="ph_file"></td></tr>-->
+            <tr><td><input class="btn btn-primary" type="submit" value="发布作业"></td></tr>
+        </table>
+    </form>
+<script th:inline="javascript">
+    var d = new Date();
+    var now1 = d.toLocaleDateString();
+    var now2 = d.toLocaleTimeString();
+    console.log(now1);
+    document.getElementById("riqi").value =now1 + " " + now2;
+</script>
+</body>
+</html>

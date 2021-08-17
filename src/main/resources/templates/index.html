@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>个人中心</title>
+</head>
+<link rel="stylesheet" href="../static/bootstrap/css/bootstrap.css" th:href="@{bootstrap/css/bootstrap.min.css}">
+<link rel="stylesheet" href="../static/bootstrap/mycss/index.css" th:href="@{bootstrap/mycss/index.css}">
+<script  src="../static/bootstrap/myjs/jquery.mini.js" th:src="@{bootstrap/myjs/jquery.mini.js}"></script>
+<script  src="../static/bootstrap/myjs/index.js" th:src="@{bootstrap/myjs/index.js}"></script>
+
+<body>
+<div class="title">
+    <h1 th:text="欢迎您 + '  ' + ${user.getName()}">sss</h1>
+    <a href="/login">注销</a>
+</div>
+<nav >
+    <aside>
+        <!--每一个菜单栏项-->
+<!--        <div class="nav_menu " id="personal_data">-->
+<!--            <div class="nav_title "><span class="one">个人中心</span><span class="two"></span></div>-->
+<!--            <div class="nav_content">个人资料</div>-->
+<!--            <div class="nav_content">学籍维护</div>-->
+<!--        </div>-->
+
+        <div id="grade">
+            <!--主标题-->
+            <div class="nav_title"><span class="one">所创班级</span><span class="two"></span></div>
+            <!--子标题-->
+            <div class="nav_content">创建班级</div>
+            <div class="nav_content">查看所创建班级</div>
+        </div>
+
+        <div id="status">
+            <div class="nav_title"><span class="one">所加班级</span><span class="two"></span></div>
+            <div class="nav_content">加入班级</div>
+            <div class="nav_content">查看所加入班级</div>
+        </div>
+
+<!--        <div id="evaluation">-->
+<!--            <div class="nav_title"><span class="one">网上评教</span><span class="two"></span></div>-->
+<!--            <div class="nav_content">质量评价管理规定</div>-->
+<!--            <div class="nav_content">评教查询</div>-->
+<!--        </div>-->
+<!--        <div id="select" >-->
+<!--            <div class="nav_title"><span class="one">选课管理</span><span class="two"></span></div>-->
+<!--            <div class="nav_content">增加可选课程</div>-->
+<!--            <div class="nav_content">查询课程状态</div>-->
+<!--        </div>-->
+
+    </aside>
+</nav>
+
+<header>
+
+
+<!--    个人信息-->
+<!--    <div>-->
+<!--        <div class="menu_content">-->
+<!--            <iframe src="tInformation.html" width="100%" height="100%"></iframe>-->
+<!--        </div>-->
+<!--        <div class="menu_content">-->
+<!--            <iframe src="tUpdateInformation.html" width="100%" height="100%"></iframe>-->
+<!--        </div>-->
+
+<!--        <div class="menu_content">-->
+<!--            <iframe src="tPassword.html" width="100%" height="100%"></iframe>-->
+<!--        </div>-->
+<!--    </div>-->
+    <!--所创班级-->
+    <div>
+        <div class="menu_content">
+            <iframe th:src="@{/create_class}" width="100%" height="100%"></iframe>
+        </div>
+        <div class="menu_content">
+            <iframe th:src="@{/check_create_class}"width="100%" height="100%"></iframe>
+        </div>
+    </div>
+    <!--所加班级-->
+    <div>
+        <div class="menu_content">
+            <iframe th:src="@{/join_class}" width="100%" height="100%"></iframe>
+        </div>
+        <div class="menu_content">
+            <iframe th:src="@{/check_join_class}" width="100%" height="100%"></iframe>
+        </div>
+    </div>
+<!--    &lt;!&ndash;网上评教&ndash;&gt;-->
+<!--    <div>-->
+<!--        <div class="menu_content">-->
+<!--            <h2>暂无数据</h2>-->
+<!--        </div>-->
+<!--        <div class="menu_content">-->
+<!--            <iframe src="tQueryEvaluation.html" width="100%" height="100%"></iframe>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    &lt;!&ndash;选课管理&ndash;&gt;-->
+<!--    <div>-->
+<!--        <div class="menu_content">-->
+<!--            <iframe src="addClass.html" width="100%" height="100%"></iframe>-->
+<!--        </div>-->
+<!--        <div class="menu_content">-->
+<!--            <iframe src="classManage.html" width="100%" height="100%"></iframe>-->
+<!--        </div>-->
+<!--    </div>-->
+
+
+
+</header>
+</body>
+</html>

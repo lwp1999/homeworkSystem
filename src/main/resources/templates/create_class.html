@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<link rel="stylesheet" href="../static/bootstrap/css/bootstrap.css" th:href="@{bootstrap/css/bootstrap.min.css}">
+<!--<link rel="stylesheet" href="../static/bootstrap/mycss/create_class.css" th:href="@{bootstrap/mycss/create_class.css}">-->
+<!--<script  src="../static/bootstrap/myjs/jquery.mini.js" th:src="@{bootstrap/myjs/jquery.mini.js}"></script>-->
+<!--<script  src="../static/bootstrap/myjs/index.js" th:src="@{bootstrap/myjs/index.js}"></script>-->
+<style>
+    *{
+        margin:0px 0px;
+        padding:0px 0px;
+    }
+
+    form{
+        margin: auto auto;
+        margin-top: 20px;
+    }
+
+    table{
+        margin: auto auto;
+    }
+
+    td{
+        width: 200px;
+        height: 40px;
+    }
+
+    h1{
+        text-align: center;
+        margin-top: 20px;
+    }
+</style>
+<body>
+<h1>创建班级</h1>
+<form action="/gocreate_class" id="gocreate_class" onsubmit="return gocreate_class()">
+    <table>
+        <tr><td>班级编号</td></tr>
+        <tr><td><input class="border border-primary"  type="text" name="class_id"></td></tr>
+        <tr><td>加入班级密码</td></tr>
+        <tr><td><input class="border border-primary" type="password" name="class_password"></td></tr>
+        <tr><td>班级名称</td></tr>
+        <tr><td><input class="border border-primary" type="text" name="class_name"></td></tr>
+        <tr><td><input class="btn btn-primary " type="submit" value="创建班级"></td></tr>
+    </table>
+</form>
+</body>
+<script th:inline="javascript">
+    function gocreate_class() {
+        if(confirm("是否确认提交")){
+            alert("创建成功!");
+            return true;
+        }
+        return false;
+    }
+</script>
+</html>

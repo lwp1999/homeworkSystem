@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.dao.Publish_HomeworkDao" >
+
+    <resultMap id="Publish_HomeworkMap" type="com.example.demo.model.Publish_Homework" >
+        <id column="ph_id" property="ph_id" jdbcType="INTEGER" />
+        <result column="user_id" property="user_id" jdbcType="VARCHAR" />
+        <result column="ph_name" property="ph_name" jdbcType="VARCHAR" />
+        <result column="ph_content" property="ph_content" jdbcType="VARCHAR"/>
+        <result column="class_id" property="class_id" jdbcType="VARCHAR"/>
+        <result column="ph_file" property="ph_file" jdbcType="VARCHAR"/>
+        <result column="riqi" property="riqi" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <select id="findByclass_id" resultMap="Publish_HomeworkMap" parameterType="String">
+        select * from publish_homework
+        <where>
+            class_id=#{class_id}
+        </where>
+    </select>
+
+    <select id="findByph_id" resultMap="Publish_HomeworkMap" parameterType="String">
+        select * from publish_homework
+        <where>
+            ph_id=#{ph_id}
+        </where>
+    </select>
+
+    <insert id="publish_homework" parameterType="com.example.demo.model.Publish_Homework">
+        INSERT INTO publish_homework (user_id,ph_name,ph_content,class_id,ph_file,riqi) VALUES (#{user_id},#{ph_name},#{ph_content},#{class_id},#{ph_file},#{riqi})
+    </insert>
+
+    <update id="cover_homework" parameterType="com.example.demo.model.Publish_Homework">
+        update submit_homwork
+        <set>
+            class_id=#{class_id},
+            ph_content=#{ph_content},
+            ph_file=#{ph_file}
+            riqi=#{riqi}
+        </set>
+        <where>
+            ph_id=#{ph_id}
+        </where>
+    </update>
+</mapper>

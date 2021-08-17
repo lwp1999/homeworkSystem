@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<link rel="stylesheet" href="../static/bootstrap/css/bootstrap.css" th:href="@{bootstrap/css/bootstrap.min.css}">
+<style>
+    h1{
+        text-align: center;
+        margin-top: 20px;
+    }
+    div{
+        margin-top: 20px;
+        border: 1px solid;
+        display: inline-block;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    td{
+        height: 40px;
+        text-align: center;
+    }
+</style>
+<body>
+<h1>您加入的班级</h1>
+<!--<div th:each="usert:${userts}"  th:each="joinClass:${joinClasses}">-->
+<!--<div th:each="usert,mycreate_class:${userts + mycreate_classes}">-->
+<div class="border border-primary" th:each="mycreate_class,userStat:${mycreate_classes}">
+    <table>
+        <tr><td>班级名称:</td><td th:text="${mycreate_class.getClass_name()}">springboot3班</td></tr>
+<!--        <tr><td>任课老师:</td><td th:text="${userts[userStat.index].getName()}">springboot3班</td></tr>-->
+<!--        <tr><td>任课老师手机号:</td><td th:text="${usert.getphone()}">springboot3班</td></tr>-->
+<!--        <tr><td>任课老师邮箱:</td><td th:text="${usert.getemail()}">springboot3班</td></tr>-->
+<!--        <tr><td>任课老师QQ号:</td><td th:text="${usert.getqq}">springboot3班</td></tr>-->
+        <tr><td>班级编号:</td><td th:text="${mycreate_class.getClass_id()}">XXXXXXX</td></tr>
+        <tr><td>班级人数:</td><td th:text="${mycreate_class.getClass_sum()}">30人</td></tr>
+        <tr>
+            <td><a class="btn btn-primary" th:href="@{/checkwillsubmithomework(class_id=${mycreate_class.getClass_id()})}">查看作业</a></td>
+            <td><a class="btn btn-danger" th:href="@{/quitclass(class_id=${mycreate_class.getClass_id()})}">退出班级</a></td>
+        </tr>
+    </table>
+</div>
+<script th:inline="javascript">
+</script>
+</body>
+</html>
