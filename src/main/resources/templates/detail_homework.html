@@ -38,7 +38,6 @@
             <input th:name="user_id" name="user_id" style='display:none' th:value="${user.getUser_id()}">
             <input th:name="class_id" name="class_ix" style='display:none' th:value="${publish_homework.getClass_id()}">
             <input th:name="sub_file" name="sub_file" style='display:none' >
-<!--            <tr><td><input th:name="" name="" type="hidden" th:value=""></td></tr>-->
             <tr><td><textarea class="form-control" type="text" th:utext="${submit_homework.getSub_content()}" th:name="sub_content" name="sub_content" style="width:500px ; height:400px"></textarea></td></tr>
             <tr><td><input class="btn btn-primary" type="submit" value="提交作业"></td></tr>
         </table>

@@ -49,16 +49,16 @@ public class controller {
                           HttpServletResponse httpServletResponse){
 
         User user = userRepository.findById(account).orElse(null);
-        if(user == null){
+        if(user == null){//账号未注册
             return "/register";
         }
-        else if(user.getPassword().equals(password)){
+        else if(user.getPassword().equals(password)){//用户输入的密码与数据库密码一致
             HttpSession session = httpServletRequest.getSession();
             session.setAttribute("user",user);
             model.addAttribute("user",user);
             return "/index";
         }
-        else {
+        else {//密码错误
             return "login";
         }
     }
@@ -74,6 +74,7 @@ public class controller {
     public String goregister(User user,
                              HttpServletRequest httpServletRequest,
                              HttpServletResponse httpServletResponse){
+        //检查账号是否注册
         User myuser = userRepository.findById(user.getUser_id()).orElse(null);
         if(myuser == null){
             userRepository.save(user);
@@ -81,7 +82,7 @@ public class controller {
             session.setAttribute("user",user);
             return "/create_class";
         }
-        else {
+        else {//账号注册过,回到登录界面
             return "/login";
         }
     }
@@ -90,6 +91,7 @@ public class controller {
     @RequestMapping(value = "/create_class")
     public String create_class(HttpServletRequest httpServletRequest,
                                HttpServletResponse httpServletResponse){
+        //没有登录,跳转到登录界面
         if(httpServletRequest.getSession().getAttribute("user")==null){
             return "/login";
         }
@@ -107,13 +109,14 @@ public class controller {
             return "/login";
         }
         else {
+            //查看班级编号是否重复
             if(create_classRepository.findById(create_class.getClass_id()).orElse(null)==null){
                 User user = (User) session.getAttribute("user");
                 System.out.println(user.getUser_id());
                 create_class.setUser_id(user.getUser_id());
-                create_class.setClass_sum(0);
-                create_classRepository.save(create_class);
-                return "/create_class";
+                create_class.setClass_sum(0);//班级人数,不包括自己
+                create_classRepository.save(create_class);//创建班级
+                return "/success";//刷新主页
             }
             else {
                 return "/false";
@@ -182,7 +185,7 @@ public class controller {
                     join_class.setClass_id(class_id);
                     join_class.setUser_id(user.getUser_id());
                     join_classRepository.save(join_class);
-                    return "join_class";
+                    return "success";
                 }else {
                     System.out.println("3");
                     return "/false";
@@ -332,7 +335,7 @@ public class controller {
 //            publish_homework.setPh_id("1");
             publish_homeworkDao.publish_homework(publish_homework);
             System.out.println("发布结束！");
-            return "/publish_homework";
+            return "/success";
         }
     }
 
@@ -352,7 +355,7 @@ public class controller {
         }
     }
 
-    //根据班级查看发布的作业
+    //根据班级查看要发布的作业
     @RequestMapping(value = "/checkwillsubmithomework")
     public String checkwillsubmithomework(Model model,
                                        String class_id,

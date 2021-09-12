@@ -33,7 +33,6 @@
             <tr><td>班级编号:</td><td th:text="${user.getClass_id()}">XXXXXXX</td></tr>
             <tr><td>班级人数:</td><td th:text="${user.getClass_sum()}">30人</td></tr>
             <tr>
-<!--                <td><button>发布作业</button></td>-->
                 <td><a class="btn btn-primary" href="" th:href="@{/publishhomework(class_id=${user.getClass_id()},user_id=${user.getUser_id()})}">发布作业</a></td>
                 <td><a class="btn btn-success"href="" th:href="@{/checkpublishhomework(class_id=${user.getClass_id()})}">查看发布作业</a></td>
                 <td><a class="btn btn-info" href="" th:href="@{/detail_class(class_id=${user.getClass_id()})}">查看详情</a></td>
@@ -41,9 +40,5 @@
         </table>
     </div>
 </body>
-<!--<script th:inline="javascript">-->
-<!--    document.getElementsByClassName("detail").onclick=function () {-->
-<!--        window.location="/login";-->
-<!--    }-->
-<!--</script>-->
+
 </html>

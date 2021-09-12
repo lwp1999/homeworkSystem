@@ -33,12 +33,6 @@
         <tr><td>作业内容</td></tr>
         <tr><td th:text="${publish_homework.getPh_content()}">请根据</td></tr>
         <tr><td>学生答案</td></tr>
-<!--        <tr><td><input th:name="ph_id" name="ph_id" type="hidden" th:value="${publish_homework.getPh_id()}"></td></tr>-->
-<!--        <tr><td><input th:name="user_id" name="user_id" type="hidden" th:value="${user.getUser_id()}"></td></tr>-->
-<!--        <tr><td><input th:name="class_id" name="class_ix" type="hidden" th:value="${publish_homework.getClass_id()}"></td></tr>-->
-<!--        <tr><td><input th:id="sub_dat" id="sub_dat" th:name="sub_dat" name="sub_dat" type="hidden" ></td></tr>-->
-<!--        <tr><td><input th:name="sub_file" name="sub_file" type="hidden"></td></tr>-->
-<!--        &lt;!&ndash;            <tr><td><input th:name="" name="" type="hidden" th:value=""></td></tr>&ndash;&gt;-->
         <tr><td><textarea class="form-control" type="text" disabled="disabled" th:utext="${submit_homework.getSub_content()}" th:name="sub_content" name="sub_content" style="width:500px ; height:300px" ></textarea></td></tr>
     </table>
 <script th:inline="javascript">

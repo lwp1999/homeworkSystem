@@ -35,15 +35,10 @@
         <td th:text="${user.getName()}"></td>
         <td th:text="${user.getSchool()}"></td>
         <td th:text="${user.getPhone()}"></td>
-<!--        <td><a th:href="@{/detail_class(class_id=${user.getClass_id()})}">踢出班级</a></td>-->
-<!--        <td><button th:class="t" class="t">踢出班级</button></td>-->
         <td><a class="btn btn-primary" th:href="@{/kickuser(class_id=${class_id},user_id=${user.getUser_id()})}">踢出班级</a></td>
     </tr>
 </table>
-<!--<script th:inline="javascript">-->
-<!--    document.getElementsByClassName("t").onclick = function () {-->
-<!--        window.location="/";-->
-<!--    }-->
+
 
 
 <!--</script>-->
